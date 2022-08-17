@@ -82,7 +82,7 @@ The following documentation and resources will help you build upon what you lear
 
 ## Workshop outline
 
-This outline provides abbreviated steps to help you follow along with the workshop. You can use this outline and the app in the [App](App) directory to replicate the workshop on your own.
+This outline provides abbreviated steps to help you follow along with the workshop. You can use this outline and the app in the [5K9](5K9) directory to replicate the workshop on your own.
 
 ### Prerequisites and setup
 
