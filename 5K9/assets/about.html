@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,500;0,700;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>5K9 Running</title>
+  </head>
+
+  <body>
+    <div id="l-boundary">
+      <!-- Header -->
+      <header id="l-header">
+        <!-- Navbar -->
+        <nav class="l-container navbar">
+          <div class="navgroup navbar-brand">
+            <a href="/index.html">
+              <h2>5K9 Running</h2>
+            </a>
+          </div>
+          <div class="navgroup">
+            <a class="navgroup-link" href="/about.html">About</a>
+            <a class="navgroup-link" href="/about.html">Store</a>
+            <a class="navgroup-link" href="/about.html">Events</a>
+            <a class="navgroup-link" href="/resources.html">Resources</a>
+          </div>
+          <div class="navgroup navbar-acct">
+            <a class="navgroup-link" href="/about.html">Sign in</a>
+            <a class="navgroup-link link-button" href="/signup.html">Sign up</a>
+          </div>
+        </nav>
+      </header>
+      <main id="l-main">
+        <div class="l-container">
+          <section class="main-intro">
+            <h2>5K9 Running Demo Site</h2>
+            <p>
+              5K9 isn't a real service. It's a demo to help you learn about
+              sending email with
+              <a
+                href="https://sendgrid.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Twilio SendGrid</a
+              >.
+            </p>
+            <div>
+              <img
+                src="./img/optimized/daphne_beach.jpg"
+                alt="A goldendoodle dog on the beach at a mountain lake."
+              />
+            </div>
+          </section>
+          <section class="main-content">
+            <div>
+              <h2>Fake Site, Real Email</h2>
+              <p>
+                When you complete the <a href="/signup.html">sign up form</a>,
+                you'll receive a real confirmation email from this fake site.
+              </p>
+              <p>
+                To learn how to build and send that confirmation email (or any
+                type of email) with Twilio SendGrid, see the
+                <a href="/resources.html">resources page</a> for links to a
+                video tutorial and GitHub repo.
+              </p>
+              <p>
+                If you're here because you really want to run with your dog, I
+                hope this won't stop you. It's a great way to exercise and bond
+                with your quadrapedal companion.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer id="l-footer">
+        <div class="l-container footer-content">
+          <p>
+            Built by
+            <a
+              href="https://www.twilio.com/company/values"
+              target="_blank"
+              rel="noopener norefferer"
+              >Pawsitrons</a
+            >
+            | Copyright &copy; <span id="copyright-date"></span>
+            <a
+              href="https://twilio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twilio Inc.</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+<!-- Copyright year -->
+<script>
+  const fullYear = new Date().getFullYear();
+  copyrightDate = document.getElementById("copyright-date").innerHTML =
+    fullYear;
+</script>

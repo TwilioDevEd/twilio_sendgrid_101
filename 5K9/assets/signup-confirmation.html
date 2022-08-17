@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,500;0,700;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>5K9 Running</title>
+  </head>
+
+  <body>
+    <div id="l-boundary">
+      <!-- Header -->
+      <header id="l-header">
+        <!-- Navbar -->
+        <nav class="l-container navbar">
+          <div class="navgroup navbar-brand">
+            <a href="/index.html">
+              <h2>5K9 Running</h2>
+            </a>
+          </div>
+          <div class="navgroup">
+            <a class="navgroup-link" href="/about.html">About</a>
+            <a class="navgroup-link" href="/about.html">Store</a>
+            <a class="navgroup-link" href="/about.html">Events</a>
+            <a class="navgroup-link" href="/resources.html">Resources</a>
+          </div>
+          <div class="navgroup navbar-acct">
+            <a class="navgroup-link" href="/about.html">Sign in</a>
+            <a class="navgroup-link link-button" href="/signup.html">Sign up</a>
+          </div>
+        </nav>
+      </header>
+
+      <main id="l-main">
+        <div class="l-container">
+          <section class="main-intro">
+            <h2>Success!</h2>
+            <p>
+              We received your form submission. Welcome to our pack. Check your
+              inbox for a welcome message.
+            </p>
+            <div>
+              <img
+                src="./img/optimized/daphne_frisbee.jpg"
+                alt="A goldendoodle dog laying with an orange frisbee in a large field."
+              />
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer id="l-footer">
+        <div class="l-container footer-content">
+          <p>
+            Built by
+            <a
+              href="https://www.twilio.com/company/values"
+              target="_blank"
+              rel="noopener norefferer"
+              >Pawsitrons</a
+            >
+            | Copyright &copy; <span id="copyright-date"></span>
+            <a
+              href="https://twilio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twilio Inc.</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+<!-- Copyright year -->
+<script>
+  const fullYear = new Date().getFullYear();
+  copyrightDate = document.getElementById("copyright-date").innerHTML =
+    fullYear;
+</script>

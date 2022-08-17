@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,500;0,700;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>5K9 Running</title>
+  </head>
+
+  <body>
+    <div id="l-boundary">
+      <!-- Header -->
+      <header id="l-header">
+        <!-- Navbar -->
+        <nav class="l-container navbar">
+          <div class="navgroup navbar-brand">
+            <a href="/index.html">
+              <h2>5K9 Running</h2>
+            </a>
+          </div>
+          <div class="navgroup">
+            <a class="navgroup-link" href="/about.html">About</a>
+            <a class="navgroup-link" href="/about.html">Store</a>
+            <a class="navgroup-link" href="/about.html">Events</a>
+            <a class="navgroup-link" href="/resources.html">Resources</a>
+          </div>
+          <div class="navgroup navbar-acct">
+            <a class="navgroup-link" href="/about.html">Sign in</a>
+            <a class="navgroup-link link-button" href="/signup.html">Sign up</a>
+          </div>
+        </nav>
+      </header>
+      <!-- Main -->
+      <main id="l-main">
+        <section class="hero hero-index">
+          <div class="hero-cta">
+            <h1>5K9 Running</h1>
+            <p>
+              Running with your dog is the best. Learn to do it the right way
+              with 5K9.
+            </p>
+            <a class="link-button" href="/signup.html">Sign Up</a>
+          </div>
+        </section>
+        <section class="l-container card-container">
+          <div class="card">
+            <h2>A Doggone Demo</h2>
+            <p>
+              5K9 isn't a real service. We're sorry — we wish it were too. This
+              is a demo site that introduces you to
+              <a
+                href="https://sendgrid.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Twilio SendGrid</a
+              >.
+            </p>
+            <p>
+              You'll have to go elsewhere for running materials, but you can
+              watch the recorded talk to learn how to send email with Twilio
+              SendGrid.
+            </p>
+            <a
+              class="link-button"
+              href="https://www.signal2022.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Watch the Tutorial</a
+            >
+          </div>
+          <div class="card">
+            <h2>This Dog is a Cat</h2>
+            <p>
+              An Octocat that is. If you're here to learn about sending email
+              with Twilio SendGrid, great!
+            </p>
+            <p>Get all the learning materials for this demo on GitHub.</p>
+            <a
+              class="link-button"
+              href="https://github.com/TwilioDevEd/twilio_sendgrid_101"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub Repo</a
+            >
+          </div>
+          <div class="card">
+            <h2>Email Onboarding</h2>
+            <p>
+              Be sure your email program starts on a solid foundation by
+              checking the Twilio SendGrid Onboarding Guide.
+            </p>
+            <p>
+              The Onboarding Guide will help ensure your email program scales
+              from the start.
+            </p>
+            <a
+              class="link-button"
+              href="https://docs.sendgrid.com/onboarding"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Email API Onboarding</a
+            >
+          </div>
+        </section>
+      </main>
+      <!-- Footer -->
+      <footer id="l-footer">
+        <div class="l-container footer-content">
+          <p>
+            Built by
+            <a
+              href="https://www.twilio.com/company/values"
+              target="_blank"
+              rel="noopener norefferer"
+              >Pawsitrons</a
+            >
+            | Copyright &copy; <span id="copyright-date"></span>
+            <a
+              href="https://twilio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twilio Inc.</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+<!-- Copyright year -->
+<script>
+  const fullYear = new Date().getFullYear();
+  copyrightDate = document.getElementById("copyright-date").innerHTML =
+    fullYear;
+</script>

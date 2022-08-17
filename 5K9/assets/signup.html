@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,500;0,700;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>5K9 Running</title>
+  </head>
+
+  <body>
+    <div id="l-boundary">
+      <!-- Header -->
+      <header id="l-header">
+        <!-- Navbar -->
+        <nav class="l-container navbar">
+          <div class="navgroup navbar-brand">
+            <a href="/index.html">
+              <h2>5K9 Running</h2>
+            </a>
+          </div>
+          <div class="navgroup">
+            <a class="navgroup-link" href="/about.html">About</a>
+            <a class="navgroup-link" href="/about.html">Store</a>
+            <a class="navgroup-link" href="/about.html">Events</a>
+            <a class="navgroup-link" href="/resources.html">Resources</a>
+          </div>
+          <div class="navgroup navbar-acct">
+            <a class="navgroup-link" href="/about.html">Sign in</a>
+            <a class="navgroup-link link-button" href="/signup.html">Sign up</a>
+          </div>
+        </nav>
+      </header>
+      <!-- Main -->
+      <main id="l-main">
+        <div class="l-container">
+          <section class="main-intro">
+            <h2>Join 5K9 Running</h2>
+            <p>
+              When you sign up for 5K9 Running, you can receive free guides to
+              help you start running today.
+            </p>
+          </section>
+          <section class="main-content">
+            <div>
+              <form action="/send-signup-email" method="POST" class="page-form">
+                <fieldset>
+                  <legend>You</legend>
+                  <div>
+                    <label for="firstName">First name*</label>
+                    <br />
+                    <input
+                      type="text"
+                      inputmode="text"
+                      name="firstName"
+                      id="firstName"
+                      required
+                    />
+                    <br />
+                    <label for="lastName">Last name*</label>
+                    <br />
+                    <input
+                      type="text"
+                      inputmode="text"
+                      name="lastName"
+                      id="lastName"
+                      required
+                    />
+                    <br />
+                    <label for="email">Email address*</label>
+                    <br />
+                    <input
+                      type="email"
+                      inputmode="email"
+                      name="email"
+                      id="email"
+                      required
+                    />
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Your dog</legend>
+                  <div>
+                    <label for="dogName">Dog's name*</label>
+                    <br />
+                    <input
+                      type="text"
+                      inputmode="text"
+                      name="dogName"
+                      id="dogName"
+                      required
+                    />
+                    <br />
+                    <input
+                      type="checkbox"
+                      inputmode="text"
+                      name="dogAge"
+                      id="dogAge"
+                    />
+                    <label for="dogAge">
+                      Check if your dog is at least 1.5 years old?
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Free resources</legend>
+                  <div>
+                    <input
+                      type="checkbox"
+                      inputmode="text"
+                      name="resources"
+                      id="nightChecklist"
+                      value="Night Running Checklist"
+                    />
+                    <label for="nightChecklist">
+                      Night Running Checklist
+                    </label>
+                    <br />
+                    <input
+                      type="checkbox"
+                      inputmode="text"
+                      name="resources"
+                      id="harnessPicks"
+                      value="2022 Harness Picks"
+                    />
+                    <label for="harnessPicks">2022 Harness Picks</label>
+                  </div>
+                </fieldset>
+                <div>
+                  <button type="submit" id="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer id="l-footer">
+        <div class="l-container footer-content">
+          <p>
+            Built by
+            <a
+              href="https://www.twilio.com/company/values"
+              target="_blank"
+              rel="noopener norefferer"
+              >Pawsitrons</a
+            >
+            | Copyright &copy; <span id="copyright-date"></span>
+            <a
+              href="https://twilio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twilio Inc.</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+<!-- Copyright year -->
+<script>
+  const fullYear = new Date().getFullYear();
+  copyrightDate = document.getElementById("copyright-date").innerHTML =
+    fullYear;
+</script>
