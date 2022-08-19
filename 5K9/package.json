@@ -8,8 +8,9 @@
     "deploy": "twilio-run deploy"
   },
   "dependencies": {
-    "twilio": "^3.56",
-    "@twilio/runtime-handler": "1.2.4"
+    "@sendgrid/mail": "^7.7.0",
+    "@twilio/runtime-handler": "1.2.4",
+    "twilio": "^3.56"
   },
   "devDependencies": {
     "twilio-run": "^3.4.3"

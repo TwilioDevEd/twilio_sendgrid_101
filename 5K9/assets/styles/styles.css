@@ -384,3 +384,18 @@ input[type="email"]:focus {
   flex-wrap: wrap;
   color: var(--body-color-primary);
 }
+
+.error-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--text-max-read-width);
+  min-height: 50px;
+  margin: 1em auto;
+  padding: 1em;
+  text-align: center;
+  background-color: var(--error-color-primary);
+  color: var(--body-color-primary);
+  border-radius: var(--border-radius-primary);
+}
