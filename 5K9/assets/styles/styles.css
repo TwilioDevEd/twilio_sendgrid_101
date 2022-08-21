@@ -399,3 +399,36 @@ input[type="email"]:focus {
   color: var(--body-color-primary);
   border-radius: var(--border-radius-primary);
 }
+
+#submit {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 0.5em;
+  flex-wrap: nowrap;
+}
+
+.loader-animation {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  border-top: none;
+  border-bottom: none;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1250ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

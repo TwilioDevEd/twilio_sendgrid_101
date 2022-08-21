@@ -45,8 +45,8 @@
           <section class="main-intro">
             <h2>Join 5K9 Running</h2>
             <p>
-              When you sign up for 5K9 Running, you can receive free guides to
-              help you start running today.
+              When you sign up for 5K9 Running, you can receive free resources
+              to help you start running today.
             </p>
           </section>
           <section id="error-banner" hidden>
@@ -143,7 +143,14 @@
                   </div>
                 </fieldset>
                 <div>
-                  <button type="submit" id="submit">Submit</button>
+                  <button type="submit" id="submit">
+                    Submit
+                    <div
+                      id="loader-animation"
+                      class="loader-animation spin"
+                      hidden
+                    ></div>
+                  </button>
                 </div>
               </form>
             </div>
@@ -187,11 +194,20 @@
   const nightChecklistInput = document.getElementById("nightChecklist");
   const harnessPicksInput = document.getElementById("harnessPicks");
   const submitButton = document.getElementById("submit");
+  const loaderAnimation = document.getElementById("loader-animation");
 
   function setErrorBanner(errorMessage) {
     errorBanner.textContent = errorMessage;
     errorBanner.removeAttribute("hidden");
     errorBanner.classList.add("error-banner");
+  }
+
+  function setLoaderAnimation() {
+    loaderAnimation.removeAttribute("hidden");
+  }
+
+  function unsetLoaderAnimation() {
+    loaderAnimation.setAttribute("hidden", true);
   }
 
   /* Check an array of checkbox items
@@ -216,6 +232,7 @@
     ]);
 
     try {
+      setLoaderAnimation();
       const response = await fetch(form.getAttribute("action"), {
         method: form.getAttribute("method"),
         body: JSON.stringify({
@@ -233,16 +250,17 @@
       if (response.ok && response.redirected) {
         window.location = response.url;
       } else {
+        unsetLoaderAnimation();
         const data = await response.json();
         console.log(data);
         setErrorBanner(data.error, "error");
       }
     } catch (error) {
+      unsetLoaderAnimation();
       setErrorBanner(
         "We encountered an error and could not process the form.",
         "error"
       );
-      console.log(error);
     } finally {
       submitButton.removeAttribute("disabled");
     }
