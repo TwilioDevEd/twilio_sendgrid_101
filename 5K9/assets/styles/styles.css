@@ -411,21 +411,6 @@ input[type="email"]:focus {
 .loader-animation {
   width: 1em;
   height: 1em;
-  border-radius: 50%;
-  border-bottom: 1px solid var(--text-color-primary);
-  border-left: 1px solid transparent;
-}
-
-.loader-animation::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  border-top: 1px solid var(--text-color-primary);
-  border-right: 1px solid transparent;
 }
 
 .spin {
