@@ -74,11 +74,15 @@ The following documentation and resources will help you build upon what you lear
 - [What is BIMI](https://sendgrid.com/blog/what-is-bimi/)
 - [BIMI Implementation Guide](https://bimigroup.org/implementation-guide/)
 
-### Twilio Runtime
+### Twilio Serverless
 
-- [Twilio Runtime documentation](https://www.twilio.com/docs/runtime)
+- [Twilio Serverless documentation](https://www.twilio.com/docs/serverless)
 - [Twilio Serverless Toolkit](https://www.twilio.com/docs/labs/serverless-toolkit)
 - [Twilio Labs](https://www.twilio.com/labs)
+
+### Sending attachments with Node.js
+
+- [Sending Email with Attachments using SendGrid and Node.js](https://www.twilio.com/blog/sending-email-attachments-with-sendgrid)
 
 ## Workshop outline
 
@@ -124,23 +128,20 @@ This outline provides abbreviated steps to help you follow along with the worksh
         - `to: "wadec.demos@gmail.com"`
         - `from: "wadec.demos@gmail.com"`
         - `subject: "Welcome to 5K9"`
-        - `html: "Hello, and <strong>welcome</strong>!"`
+        - `html: "Hello, <strong>Runner</strong>!"`
     - Send first request
     - Deliverability
       - Examine message warning
-      - SPF, DKIM, DMARC
+      - SPF, DKIM
       - Complete domain authentication
         - Automated security benefits
         - Send to a coworker
-      - BIMI
-    - Modify code and send a second request:
-      `from: {email: "signup@5k9.run"}`
+    - Modify code and send a second request: `from: {email: "signup@5k9.run"}`
     - Show warning gone
     - Modify code to process function
       - Explain Twilio Function parameters
       - Drop full code sample
         - Callout
-          - Setting `email` and `name` in address blocks
           - Set `to` address from `event`
           - Set `from` from `context`
     - Templates
@@ -154,11 +155,8 @@ This outline provides abbreviated steps to help you follow along with the worksh
           - Design Editor benefits
           - Quick overview
           - Show modified template with dog
-        - Set `templateId` in `context`
       - Handlebars
         - Walk handlebars examples in template
           - Variable replacement
           - Conditionals
-          - Iterables
-          - Test values
       - Switch template version for Halloween
