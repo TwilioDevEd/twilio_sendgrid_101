@@ -41,7 +41,7 @@ exports.handler = async function (context, event, callback) {
       attachments = selectedResources.map((resource) => {
         return {
           content: fs
-            .readFileSync(path.join(attachmentsPath, `${resource}.pdf`))
+            .readFileSync(path.join(attachmentsPath, `${resource}.private.pdf`))
             .toString("base64"),
           filename: `${resource}.pdf`,
           type: "application/pdf",
