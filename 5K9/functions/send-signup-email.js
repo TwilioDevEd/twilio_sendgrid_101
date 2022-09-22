@@ -18,10 +18,14 @@ exports.handler = async function (context, event, callback) {
   // Set Twilio SendGrid API key
   sg.setApiKey(context.SENDGRID_API_KEY);
 
-  /* Set up attachments.
-   * In this case, attachments are retrieved from this project's assets directory.
-   * Attachments are selected based on the "resources" checked in a form submission.
-   * The resources may come as a string (one resource), or array (both resources).
+  /*
+   * Workshop Homework: Add Attachments
+   * In this case, attachments are retrieved from this project's assets
+   * directory. Attachments are selected based on the "resources" checked in
+   * a form submission. The resources may come as a string (one resource) or
+   * array (multiple resources). Additionally, these attachments are "private"
+   * assets in the Twilio Serverless project:
+   *  https://www.twilio.com/docs/serverless/functions-assets/visibility
    */
   const attachmentsPath = path.join(
     __dirname,
@@ -34,10 +38,21 @@ exports.handler = async function (context, event, callback) {
 
   if (event.resources) {
     try {
+      // When a single resource is selected, it will come in as a string
+      // When multiple resources are selected, they will be items in an array
       const selectedResources =
         typeof event.resources === "string"
           ? [event.resources]
           : event.resources;
+      /*
+       * Attachments must be sent as an array of base64 encoded strings with
+       * an appropriate MIME type for the content you are attaching. For
+       * example: "image/png" or "application/pdf".
+       * See the Mail Send API reference for additonal information:
+       *   https://docs.sendgrid.com/api-reference/mail-send/mail-send
+       * See the Twilio blog for an attachments tutorial:
+       *  https://www.twilio.com/blog/sending-email-attachments-with-sendgrid
+       */
       attachments = selectedResources.map((resource) => {
         return {
           content: fs
