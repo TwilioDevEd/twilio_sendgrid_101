@@ -104,9 +104,19 @@
                       inputmode="text"
                       name="dogName"
                       id="dogName"
+                      autocomplete="off"
                       required
                     />
                     <br />
+                    <label for="dogFavoriteTreat">Dog's favorite treat</label>
+                    <br />
+                    <input
+                      type="text"
+                      inputmode="text"
+                      name="dogFavoriteTreat"
+                      id="dogFavoriteTreat"
+                      autocomplete="off"
+                    />
                     <input
                       type="checkbox"
                       inputmode="text"
@@ -280,6 +290,7 @@
           lastName: lastNameInput.value,
           email: emailInput.value,
           dogName: dogNameInput.value,
+          dogFavoriteTreat: dogFavoriteTreat.value,
           dogAge: dogAgeInput.checked ? dogAgeInput.value : "",
           resources: selectedResources,
         }),

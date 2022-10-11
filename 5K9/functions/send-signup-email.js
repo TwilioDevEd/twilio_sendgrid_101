@@ -18,6 +18,21 @@ exports.handler = async function (context, event, callback) {
   // Set Twilio SendGrid API key
   sg.setApiKey(context.SENDGRID_API_KEY);
 
+  // Honeypot check
+  if (event.dogFavoriteTreat !== "") {
+    console.log("Spam submission", {
+      headers: event.request.headers,
+      honeypot: event.dogFavoriteTreat,
+    });
+    return callback(
+      null,
+      errorResponse(
+        response,
+        `The form was submitted with invalid information.`
+      )
+    );
+  }
+
   /*
    * Workshop Homework: Add Attachments
    * In this case, attachments are retrieved from this project's assets
@@ -83,6 +98,9 @@ exports.handler = async function (context, event, callback) {
     templateId: context.EMAIL_TEMPLATE_ID,
     dynamicTemplateData: event,
     attachments: attachments,
+    asm: {
+      groupId: Number(context.ASM_GROUP_ID),
+    },
   };
   // Form validations
   const requiredFields = ["firstName", "lastName", "email", "dogName"];
