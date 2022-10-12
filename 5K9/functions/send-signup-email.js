@@ -1,7 +1,6 @@
 // Import SendGrid helper library
 const sg = require("@sendgrid/mail");
 // Imports to support attachments
-const path = require("path");
 const fs = require("fs");
 
 exports.handler = async function (context, event, callback) {
@@ -19,9 +18,8 @@ exports.handler = async function (context, event, callback) {
   sg.setApiKey(context.SENDGRID_API_KEY);
 
   // Honeypot check
-  if (event.dogFavoriteTreat !== "") {
+  if (event.dogFavoriteTreat) {
     console.log("Spam submission", {
-      headers: event.request.headers,
       honeypot: event.dogFavoriteTreat,
     });
     return callback(
@@ -42,13 +40,6 @@ exports.handler = async function (context, event, callback) {
    * assets in the Twilio Serverless project:
    *  https://www.twilio.com/docs/serverless/functions-assets/visibility
    */
-  const attachmentsPath = path.join(
-    __dirname,
-    "..",
-    "assets",
-    "email_attachments"
-  );
-
   let attachments = [];
 
   if (event.resources) {
@@ -71,15 +62,18 @@ exports.handler = async function (context, event, callback) {
       attachments = selectedResources.map((resource) => {
         return {
           content: fs
-            .readFileSync(path.join(attachmentsPath, `${resource}.private.pdf`))
+            .readFileSync(
+              Runtime.getAssets()[
+                `/email_attachments/${resource.split(" ").join("-")}.pdf`
+              ].path
+            )
             .toString("base64"),
-          filename: `${resource}.pdf`,
+          filename: `${resource.split(" ").join("-")}.pdf`,
           type: "application/pdf",
           disposition: "attachment",
         };
       });
     } catch (error) {
-      console.log(event);
       return callback(
         null,
         errorResponse(
@@ -89,7 +83,6 @@ exports.handler = async function (context, event, callback) {
       );
     }
   }
-
   // Build the email request body
   const msg = {
     to: { email: event.email, name: `${event.firstName} ${event.lastName}` },

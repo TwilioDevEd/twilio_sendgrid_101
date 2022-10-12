@@ -241,6 +241,7 @@
   const emailInput = document.getElementById("email");
   const dogNameInput = document.getElementById("dogName");
   const dogAgeInput = document.getElementById("dogAge");
+  const dogFavoriteTreatInput = document.getElementById("dogFavoriteTreat");
   const nightChecklistInput = document.getElementById("nightChecklist");
   const harnessPicksInput = document.getElementById("harnessPicks");
   const submitButton = document.getElementById("submit");
@@ -260,7 +261,8 @@
     loaderAnimation.setAttribute("hidden", true);
   }
 
-  /* Check an array of checkbox items
+  /*
+   * Check an array of checkbox items
    * return the checkbox value
    */
   function getResources(checkboxInputs) {
@@ -290,7 +292,7 @@
           lastName: lastNameInput.value,
           email: emailInput.value,
           dogName: dogNameInput.value,
-          dogFavoriteTreat: dogFavoriteTreat.value,
+          dogFavoriteTreat: dogFavoriteTreatInput.value,
           dogAge: dogAgeInput.checked ? dogAgeInput.value : "",
           resources: selectedResources,
         }),
@@ -298,20 +300,16 @@
           "Content-Type": "application/json",
         },
       });
-      if (response.ok && response.redirected) {
+      if (response.ok) {
         window.location = response.url;
       } else {
         unsetLoaderAnimation();
         const data = await response.json();
-        console.log(data);
-        setErrorBanner(data.error, "error");
+        setErrorBanner(data.error);
       }
     } catch (error) {
       unsetLoaderAnimation();
-      setErrorBanner(
-        "We encountered an error and could not process the form.",
-        "error"
-      );
+      setErrorBanner("We encountered an error and could not process the form.");
     } finally {
       submitButton.removeAttribute("disabled");
     }
