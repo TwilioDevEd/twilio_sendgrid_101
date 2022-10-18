@@ -276,6 +276,14 @@ button:active {
 }
 
 /* Forms */
+/* Honey pot */
+#dogFavoriteTreat {
+  display: none;
+}
+label[for="dogFavoriteTreat"] {
+  display: none;
+}
+
 .page-form {
   width: 100%;
   min-width: 300px;
@@ -287,7 +295,7 @@ button:active {
   box-sizing: border-box;
 }
 
-/* Desktop layour */
+/* Desktop layout */
 @media screen and (min-width: 960px) {
   .page-form {
     width: 450px;
