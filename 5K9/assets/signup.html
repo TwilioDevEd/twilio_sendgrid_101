@@ -104,9 +104,19 @@
                       inputmode="text"
                       name="dogName"
                       id="dogName"
+                      autocomplete="off"
                       required
                     />
                     <br />
+                    <label for="dogFavoriteTreat">Dog's favorite treat</label>
+                    <br />
+                    <input
+                      type="text"
+                      inputmode="text"
+                      name="dogFavoriteTreat"
+                      id="dogFavoriteTreat"
+                      autocomplete="off"
+                    />
                     <input
                       type="checkbox"
                       inputmode="text"
@@ -231,6 +241,7 @@
   const emailInput = document.getElementById("email");
   const dogNameInput = document.getElementById("dogName");
   const dogAgeInput = document.getElementById("dogAge");
+  const dogFavoriteTreatInput = document.getElementById("dogFavoriteTreat");
   const nightChecklistInput = document.getElementById("nightChecklist");
   const harnessPicksInput = document.getElementById("harnessPicks");
   const submitButton = document.getElementById("submit");
@@ -250,7 +261,8 @@
     loaderAnimation.setAttribute("hidden", true);
   }
 
-  /* Check an array of checkbox items
+  /*
+   * Check an array of checkbox items
    * return the checkbox value
    */
   function getResources(checkboxInputs) {
@@ -271,6 +283,7 @@
       harnessPicksInput,
     ]);
 
+    // Fetch form field data
     try {
       setLoaderAnimation();
       const response = await fetch(form.getAttribute("action"), {
@@ -280,6 +293,7 @@
           lastName: lastNameInput.value,
           email: emailInput.value,
           dogName: dogNameInput.value,
+          dogFavoriteTreat: dogFavoriteTreatInput.value,
           dogAge: dogAgeInput.checked ? dogAgeInput.value : "",
           resources: selectedResources,
         }),
@@ -287,20 +301,17 @@
           "Content-Type": "application/json",
         },
       });
-      if (response.ok && response.redirected) {
-        window.location = response.url;
+      if (response.ok) {
+        const { redirect_path } = await response.json();
+        window.location = redirect_path;
       } else {
         unsetLoaderAnimation();
         const data = await response.json();
-        console.log(data);
-        setErrorBanner(data.error, "error");
+        setErrorBanner(data.error);
       }
     } catch (error) {
       unsetLoaderAnimation();
-      setErrorBanner(
-        "We encountered an error and could not process the form.",
-        "error"
-      );
+      setErrorBanner("We encountered an error and could not process the form.");
     } finally {
       submitButton.removeAttribute("disabled");
     }

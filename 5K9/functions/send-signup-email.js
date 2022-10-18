@@ -30,9 +30,9 @@ exports.handler = async function (context, event, callback) {
    */
   try {
     await sg.send(msg);
-    response
-      .setStatusCode(303)
-      .appendHeader("Location", "/signup-confirmation.html");
+    response.setBody({
+      redirect_path: "/signup-confirmation.html",
+    });
     return callback(null, response);
   } catch (error) {
     let { message } = error;
