@@ -78,23 +78,12 @@ exports.handler = async function (context, event, callback) {
         null,
         errorResponse(
           response,
-          "There was an error processing the your requested attachments."
+          "There was an error processing the requested attachments."
         )
       );
     }
   }
-  // Build the email request body
-  const msg = {
-    to: { email: event.email, name: `${event.firstName} ${event.lastName}` },
-    from: { email: context.FROM_EMAIL_ADDRESS, name: "5K9 Running" },
-    replyTo: { email: context.REPLY_TO_EMAIL_ADDRESS, name: "5K9 Support" },
-    templateId: context.EMAIL_TEMPLATE_ID,
-    dynamicTemplateData: event,
-    attachments: attachments,
-    asm: {
-      groupId: Number(context.ASM_GROUP_ID),
-    },
-  };
+
   // Form validations
   const requiredFields = ["firstName", "lastName", "email", "dogName"];
 
@@ -115,15 +104,29 @@ exports.handler = async function (context, event, callback) {
       )
     );
   }
+
+  // Build the email request body
+  const msg = {
+    to: { email: event.email, name: `${event.firstName} ${event.lastName}` },
+    from: { email: context.FROM_EMAIL_ADDRESS, name: "5K9 Running" },
+    replyTo: { email: context.REPLY_TO_EMAIL_ADDRESS, name: "5K9 Support" },
+    templateId: context.EMAIL_TEMPLATE_ID,
+    dynamicTemplateData: event,
+    attachments: attachments,
+    asm: {
+      groupId: Number(context.ASM_GROUP_ID),
+    },
+  };
+
   /* Try to call the SendGrid API.
    * On success, redirect to a confirmation page.
    * On failure, return the error message
    */
   try {
     await sg.send(msg);
-    response
-      .setStatusCode(303)
-      .appendHeader("Location", "/signup-confirmation.html");
+    response.setBody({
+      redirect_path: "/signup-confirmation.html",
+    });
     return callback(null, response);
   } catch (error) {
     let { message } = error;

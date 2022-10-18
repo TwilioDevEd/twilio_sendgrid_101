@@ -283,6 +283,7 @@
       harnessPicksInput,
     ]);
 
+    // Fetch form field data
     try {
       setLoaderAnimation();
       const response = await fetch(form.getAttribute("action"), {
@@ -301,7 +302,8 @@
         },
       });
       if (response.ok) {
-        window.location = response.url;
+        const { redirect_path } = await response.json();
+        window.location = redirect_path;
       } else {
         unsetLoaderAnimation();
         const data = await response.json();
