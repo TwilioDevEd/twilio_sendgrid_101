@@ -284,6 +284,19 @@ label[for="dogFavoriteTreat"] {
   display: none;
 }
 
+/* Privacy statement */
+.privacy-statement {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  border: 1px solid var(--action-color-primary);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.privacy-statement p:last-of-type {
+  margin-bottom: 0;
+}
+
 .page-form {
   width: 100%;
   min-width: 300px;
