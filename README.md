@@ -2,7 +2,6 @@
 
 ## Contents
 
-- [Live demo site](https://5k9-8072.twil.io/)
 - [Workshop description](#workshop-description)
 - [Documentation and resources](#documentation-and-resources)
 
