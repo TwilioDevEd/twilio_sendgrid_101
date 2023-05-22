@@ -1,21 +1,21 @@
 :root {
   /* Colors */
-  --container-color-primary: #040d0a;
-  --action-color-primary: #f29f05;
-  --action-color-primary-hover: #fdb32b;
-  --action-color-primary-active: #d98e04;
-  --error-color-primary: #cf0000;
-  --body-color-primary: #fff;
+  --container-color-primary: #006dfa;
+  --action-color-primary: #fea500;
+  --action-color-primary-hover: #ffb245;
+  --action-color-primary-active: #ffb245;
+  --error-color-primary: rgb(214, 31, 31);
+  --body-color-primary: rgb(244, 244, 246);
   --header-color-primary: var(--container-color-primary);
   --header-color-inverse: var(--body-color-primary);
   --footer-color-primary: var(--container-color-primary);
-  --border-color-primary: var(--container-color-primary);
-  --text-color-primary: var(--container-color-primary);
+  --border-color-primary: rgb(13, 19, 28);
+  --text-color-primary: rgb(13, 19, 28);
   --button-color-primary: var(--action-color-primary);
   --button-color-primary-hover: var(--action-color-primary-hover);
   --button-color-primary-active: var(--action-color-primary-active);
   --link-color-primary: var(--action-color-primary);
-  --link-color-primary-hover: var(--action-color-primary-hover);
+  --link-color-primary-hover: var(--container-color-primary);
   --link-color-primary-active: var(--action-color-primary-active);
   /* Dimensions */
   --container-max-width: 1600px;
@@ -89,11 +89,11 @@ a:visited {
 }
 
 a:hover {
-  color: var(--action-color-primary-hover);
+  color: var(--link-color-primary-hover);
 }
 
 a:active {
-  color: var(--action-color-primary-hover);
+  color: var(--link-color-primary-active);
 }
 
 button {
@@ -276,27 +276,6 @@ button:active {
 }
 
 /* Forms */
-/* Honey pot */
-#dogFavoriteTreat {
-  display: none;
-}
-label[for="dogFavoriteTreat"] {
-  display: none;
-}
-
-/* Privacy statement */
-.privacy-statement {
-  margin: 0.5rem auto;
-  padding: 0.5rem;
-  border: 1px solid var(--action-color-primary);
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-
-.privacy-statement p:last-of-type {
-  margin-bottom: 0;
-}
-
 .page-form {
   width: 100%;
   min-width: 300px;
@@ -330,6 +309,10 @@ legend {
 label {
   display: inline-block;
   margin-top: 1.25em;
+}
+
+input {
+  background-color: var(--body-color-primary);
 }
 
 input[type="checkbox"] {
@@ -372,6 +355,26 @@ input[type="email"]:focus {
   padding: 0.5em 0;
 }
 
+.navbar-brand a {
+  color: var(--body-color-primary);
+}
+
+.navbar-brand a:hover {
+  color: var(--action-color-primary-hover);
+}
+
+a.navgroup-link {
+  color: var(--body-color-primary);
+}
+
+a.navgroup-link:hover {
+  color: var(--action-color-primary-hover);
+}
+
+button a.navgroup-link:hover {
+  color: var(--text-color-primary);
+}
+
 .navbar-brand {
   padding: 0;
 }
@@ -404,6 +407,10 @@ input[type="email"]:focus {
   justify-content: center;
   flex-wrap: wrap;
   color: var(--body-color-primary);
+}
+
+.footer-content a:hover {
+  color: var(--action-color-primary-hover);
 }
 
 .error-banner {

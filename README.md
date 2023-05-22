@@ -15,10 +15,6 @@ In this workshop, you'll learn how to implement the Twilio SendGrid Mail Send AP
 
 The following documentation and resources will help you build upon what you learn in this workshop.
 
-### TwilioQuest
-
-- [TwilioQuest](https://www.twilio.com/quest)
-
 ### Twilio SendGrid documentation and API reference
 
 - [Twilio SendGrid documentation](https://docs.sendgrid.com/)
@@ -74,12 +70,6 @@ The following documentation and resources will help you build upon what you lear
 - [What is BIMI](https://sendgrid.com/blog/what-is-bimi/)
 - [BIMI Implementation Guide](https://bimigroup.org/implementation-guide/)
 
-### Twilio Serverless
-
-- [Twilio Serverless documentation](https://www.twilio.com/docs/serverless)
-- [Twilio Serverless Toolkit](https://www.twilio.com/docs/labs/serverless-toolkit)
-- [Twilio Labs](https://www.twilio.com/labs)
-
 ### Sending attachments with Node.js
 
 - [Sending Email with Attachments using SendGrid and Node.js](https://www.twilio.com/blog/sending-email-attachments-with-sendgrid)
@@ -94,7 +84,7 @@ This outline provides abbreviated steps to help you follow along with the worksh
 2. [Create and store an API key](https://docs.sendgrid.com/ui/account-and-settings/api-keys/).
 3. [Domain authentication](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication#third-pane).
 
-### Workshop
+### Workshop steps
 
 - Introduction
   - Overview
@@ -112,17 +102,14 @@ This outline provides abbreviated steps to help you follow along with the worksh
   - Definitions and examples
   - 80/20 ratio for transactional messages
 - Building the app
-  - Twilio Serverless
-    - Functions
   - Build `signup-confirmation.js`
     - Helper library
       - Install helpler library: `npm i @sendgrid/mail`
       - Import helper: `const sg = require("@sendgrid/mail");`
     - API keys
-      - Set API key: `sg.setApiKey(process.env.SENDGRID_API_KEY);`, `sg.setApiKey(context.SENDGRID_API_KEY);`
+      - Set API key: `sg.setApiKey(process.env.SENDGRID_API_KEY);`
       - Create an API key in the SendGrid UI
         - Restricted access key
-        - Delete key
     - Message object
       - Create and explain `msg {}` object and fields.
         - `to: "wadec.demos@gmail.com"`
@@ -137,17 +124,15 @@ This outline provides abbreviated steps to help you follow along with the worksh
         - Automated security benefits
         - Send to a coworker
     - Modify code and send a second request: `from: {email: "signup@5k9.run"}`
-    - Show warning gone
-    - Modify code to process function
-      - Explain Twilio Function parameters
-      - Drop full code sample
-        - Callout
-          - Set `to` address from `event`
-          - Set `from` from `context`
+    - Show warning is gone
+    - Drop full code sample
+      - Callout
+        - Set `to` address from `reqData`
+        - Set `from` from `process.env`
     - Templates
       - Prepare code
         - Stage `templateId`
-        - Set `dynamicTemplateData` from `event`
+        - Set `dynamicTemplateData` from `reqData`
       - Build a template
         - Add template
         - Add version
