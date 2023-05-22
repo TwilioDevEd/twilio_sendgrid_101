@@ -1,21 +1,16 @@
 {
-  "name": "5K9",
+  "name": "5k9",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "twilio-run",
-    "deploy": "twilio-run deploy"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
-    "@twilio/runtime-handler": "1.2.4",
-    "twilio": "^3.56"
-  },
-  "devDependencies": {
-    "twilio-run": "^3.4.3"
-  },
-  "engines": {
-    "node": "14"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1"
   }
 }

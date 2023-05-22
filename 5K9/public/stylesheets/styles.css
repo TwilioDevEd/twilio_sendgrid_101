@@ -260,7 +260,7 @@ button:active {
 
 /* Background image by page */
 .hero-index {
-  background-image: url("../img/optimized/daphne_hero.jpg");
+  background-image: url("../static/images/daphne_hero.jpg");
 }
 
 /* Desktop layout */
