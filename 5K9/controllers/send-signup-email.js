@@ -1,6 +1,5 @@
 // Import SendGrid helper library
 const sg = require("@sendgrid/mail");
-const { response } = require("express");
 // Imports to support attachments
 const fs = require("fs");
 const path = require("path");
