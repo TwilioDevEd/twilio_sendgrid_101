@@ -4,7 +4,7 @@ const firstNameInput = document.getElementById("firstName");
 const lastNameInput = document.getElementById("lastName");
 const emailInput = document.getElementById("email");
 const dogNameInput = document.getElementById("dogName");
-const dogAgeInput = document.getElementById("dogAge");
+const cyberneticInput = document.getElementById("cybernetic");
 const nightChecklistInput = document.getElementById("nightChecklist");
 const harnessPicksInput = document.getElementById("harnessPicks");
 const submitButton = document.getElementById("submit");
@@ -56,7 +56,7 @@ form.addEventListener("submit", async (event) => {
         lastName: lastNameInput.value,
         email: emailInput.value,
         dogName: dogNameInput.value,
-        dogAge: dogAgeInput.checked ? dogAgeInput.value : "",
+        cybernetic: cyberneticInput.checked ? cyberneticInput.value : "",
         resources: selectedResources,
       }),
       headers: {
