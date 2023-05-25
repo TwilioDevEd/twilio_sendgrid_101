@@ -5,8 +5,10 @@ const lastNameInput = document.getElementById("lastName");
 const emailInput = document.getElementById("email");
 const dogNameInput = document.getElementById("dogName");
 const cyberneticInput = document.getElementById("cybernetic");
-const nightChecklistInput = document.getElementById("nightChecklist");
-const harnessPicksInput = document.getElementById("harnessPicks");
+const pawsitiveReinforcement = document.getElementById(
+  "pawsitiveReinforcement"
+);
+const gpt4 = document.getElementById("gpt4");
 const submitButton = document.getElementById("submit");
 const loaderAnimation = document.getElementById("loader-animation");
 
@@ -41,10 +43,7 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   submitButton.setAttribute("disabled", "disabled");
 
-  let selectedResources = getResources([
-    nightChecklistInput,
-    harnessPicksInput,
-  ]);
+  let selectedResources = getResources([pawsitiveReinforcement, gpt4]);
 
   // Fetch form field data
   try {
