@@ -7,9 +7,11 @@
 
 ## Workshop description
 
-Among the communication channels available today, email is non-negotiable. Email is reliable, works globally, and offers flexibility that can't be met by other communications avenues. That may be why 83% of customers prefer to receive business communications via email.
+Email is reliable, global, and offers flexibility that can't be met by other communications channels.
 
-In this workshop, you'll learn how to implement the Twilio SendGrid Mail Send API to programmatically deliver email at scale. You'll also see how the Twilio SendGrid dynamic templating system makes it possible to personalize your messages for each customer, and you can expect some deliverability pro-tips along the way.
+In this workshop, you'll learn how to implement the Twilio SendGrid Email API, and you can expect some deliverability tips to help you start sending at scale. What kind of scale? In 2022, SendGrid sent more than 1.6 trillion messages — 50 billion of which were sent during the Black Friday and Cyber Monday week alone while maintaining a 99 percent delivery rate.
+
+You'll also see how the SendGrid dynamic templating system makes it possible to personalize your messages for each customer, allowing you to build lasting connections with your audience.
 
 ## Documentation and resources
 

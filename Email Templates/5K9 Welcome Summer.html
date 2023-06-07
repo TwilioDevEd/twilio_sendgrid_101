@@ -114,13 +114,6 @@
       }
     }
   </style>
-    <style>
-      @media screen and (max-width:480px) {
-        table\0 {
-          width: 480px !important;
-          }
-      }
-    </style>
       <!--user entered Head Start--><!--End Head user entered-->
     </head>
     <body>
@@ -157,7 +150,7 @@
     <tbody>
       <tr>
         <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
-          <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="340" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/c8ce7caaee77455d/46c62c91-4cc8-4c3f-83c6-97fc6cd9f560/3000x3000.jpg">
+          <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="340" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/7804cf55e5ecf00f/e6e62347-7ec3-4e21-8f89-7e010effb886/600x600.jpg">
         </td>
       </tr>
     </tbody>
@@ -170,7 +163,7 @@
           <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="cx1wJ9TWZ54ifP2bs94mke" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:18px 0px 18px 0px; line-height:40px; text-align:inherit; background-color:#1A82e2;" height="100%" valign="top" bgcolor="#1A82e2" role="module-content"><div><h1 style="text-align: center"><span style="color: #ffffff">Welcome to 5K9 Running!</span></h1>
+        <td style="padding:18px 0px 18px 0px; line-height:40px; text-align:inherit; background-color:#1A82e2;" height="100%" valign="top" bgcolor="#1A82e2" role="module-content"><div><h1 style="text-align: center"><span style="color: #ffffff">Welcome to 5K9 TrAIning!</span></h1>
 <div style="font-family: inherit; text-align: center"><span style="color: #ffffff; font-size: 24px">We're pawsitive you and {{insert dogName "default=your speedy pup"}} will love it!</span></div><div></div></div></td>
       </tr>
     </tbody>
@@ -199,17 +192,54 @@
   </table><table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="72bb1572-b0e1-470d-b5f7-446520758c92">
     <tbody>
       <tr>
-        <td height="100%" valign="top" role="module-content"><h2 style="font-family: inherit; color:#1A82E2; text-align: center; font-size: 30px; margin-top:20px">BEFORE YOU POUND THE PAVEMENT</h2>
-{{#if dogAge}}
-<p style="font-family: inherit; margin: 20px 25px 0px 25px; text-align: center;">Dog safety is our top concern at 5K9. You indicated that {{ insert dogName 'default=your dog' }} is at least one and a half years old, which means they're old enough to start training. However, we still recommend talking to your veterinarian before you start running with {{ insert dogName 'default=your dog' }}. You can never be too careful when it comes to your best friend.</p>
-{{else}}
-<p style="font-family: inherit; margin: 20px 25px 0px 25px; text-align: center;">Dog safety is our top concern at 5K9. You indicated that {{ insert dogName 'default=your dog' }} is not yet one and a half years old. A dog's joints and bones are still developing and not ready for distance running before they turn one and a half. We recommend talking to your veterinarian regardless of your dog's age before beginning to run, and you should refrain from running with {{ insert dogName 'default=your dog' }} until they're older.</p>
-<br>
-<p style="font-family: inherit; margin: 20px 25px 0px 25px; text-align: center;">For now, we're still happy to have you as part of the 5K9 pack. We have a bunch of resources to make sure you're ready to run with {{ insert dogName 'default=your dog' }} when they're all grown up.</p>
+        <td height="100%" valign="top" role="module-content"><table>
+    <tbody>
+        <tr>
+            <td>
+                <h2 style="font-family: inherit; color:#1A82E2; text-align: center; font-size: 30px; margin-top:20px">Before You Begin your TrAIning Journey</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{#if cybernetic}}
+                <p style="font-family: inherit; margin: 20px 25px 0px 25px; text-align: left;">You indicated that {{ insert dogName 'default=your dog' }} is a cybernetic organism. We're excited to hear your dog is already living an enhanced life, and we think {{ insert dogName 'default=your dog' }} may be just right for FuraLink. FuraLink is a dog brain-machine interface that represents the future of dog training. Want to learn more? Click the link for exclusive details about a technology so disruptive, the ASPCA calls it "reprehnsible."</p>
+                {{else}}
+                <p style="font-family: inherit; margin: 20px 25px 0px 25px; text-align: left;">You indicated that {{ insert dogName 'default=your dog' }} is not a cybernetic organism, but what if they could be? We're now offering early access to FuraLink. FuraLink is a dog brain-machine interface that represents the future of dog training. Want to learn more? Click the link for exclusive details about a technology so disruptive, the ASPCA calls it "reprehnsible."</p>
+            </td>
+        </tr>
+        <tr>
+            <td height="18px">
+            </td>
+        </tr>
+    </tbody>
+</table>
 {{/if}}</td>
       </tr>
     </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:60px 10px 80px 10px;" bgcolor="#FFFFFF" data-distribution="1">
+  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="023ec2a3-eb30-4a87-be38-3f9fb37e1556">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 18px 0px;" role="module-content" bgcolor="">
+        </td>
+      </tr>
+    </tbody>
+  </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="c2a8de6b-d6d9-4965-9265-f24740d82488">
+      <tbody>
+        <tr>
+          <td align="center" bgcolor="" class="outer-td" style="padding:0px 0px 0px 0px;">
+            <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
+              <tbody>
+                <tr>
+                <td align="center" bgcolor="#1A82E2" class="inner-td" style="border-radius:6px; font-size:16px; text-align:center; background-color:inherit;">
+                  <a href="https://sendgrid.com" style="background-color:#1A82E2; border:0px solid #333333; border-color:#333333; border-radius:0px; border-width:0px; color:#ffffff; display:inline-block; font-size:18px; font-weight:bold; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">About FuraLink</a>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:60px 10px 80px 10px;" bgcolor="#FFFFFF" data-distribution="1">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="top"><table width="500" style="width:500px; border-spacing:0; border-collapse:collapse; margin:0px 90px 0px 90px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
@@ -279,7 +309,7 @@
           <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="025ccf44-dda7-470c-834e-e1423d149a1a.1.2" data-mc-module-version="2019-10-22">
     <tbody>
       <tr>
-        <td style="padding:0px 0px 0px 0px; line-height:25px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 35px; color: #1a82e2"><strong>RACER SHOES</strong></span></div><div></div></div></td>
+        <td style="padding:0px 0px 0px 0px; line-height:25px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 35px; color: #1a82e2"><strong>TrAIners</strong></span></div><div></div></div></td>
       </tr>
     </tbody>
   </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="9d26f198-fbae-4b09-af4d-b7b7e7cb2684.1.1">
@@ -428,7 +458,7 @@
               <tbody>
                 <tr>
                 <td align="center" bgcolor="#ffffff" class="inner-td" style="border-radius:6px; font-size:16px; text-align:left; background-color:inherit;">
-                  <a href="" style="background-color:#ffffff; border:0px solid #000000; border-color:#000000; border-radius:0px; border-width:0px; color:#1A82E2; display:inline-block; font-size:14px; font-weight:bold; letter-spacing:0px; line-height:normal; padding:18px 30px 18px 30px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">SHOP ALL NUTRITIONS</a>
+                  <a href="" style="background-color:#ffffff; border:0px solid #000000; border-color:#000000; border-radius:0px; border-width:0px; color:#1A82E2; display:inline-block; font-size:14px; font-weight:bold; letter-spacing:0px; line-height:normal; padding:18px 30px 18px 30px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">SHOP ALL NUTRITION</a>
                 </td>
                 </tr>
               </tbody>
